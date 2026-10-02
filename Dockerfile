@@ -19,5 +19,5 @@ COPY --from=build /app/dist ./dist
 COPY --from=build /app/src/grpc/proto ./src/grpc/proto
 COPY --from=build /app/prisma ./prisma
 COPY --from=build /app/prisma.config.ts ./prisma.config.ts
-EXPOSE 3000 50051
+EXPOSE 4001 50051
 CMD ["node", "dist/server.js"]

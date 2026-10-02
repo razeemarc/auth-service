@@ -2,8 +2,9 @@ import "dotenv/config";
 import { app } from "./app.js";
 import { prisma } from "./config/prisma.js";
 import { startGrpcServer } from "./grpc/server.js";
+import { config } from "./config/env.js";
 
-const port = Number(process.env.PORT ?? 3000);
+const port = config.PORT;
 await prisma.$connect();
 const httpServer = app.listen(port, () => console.log(`HTTP auth service listening on ${port}`));
 const grpcServer = startGrpcServer();
