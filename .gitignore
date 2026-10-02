@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+dist/
+src/generated/prisma/
+.env
+.env.*
+!.env.example
