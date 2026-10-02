@@ -8,6 +8,7 @@ import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./config/swagger.js";
 
 export const app = express();
+app.get("/api-docs.json", (_req, res) => res.json(swaggerSpec));
 // Serve Swagger UI before Helmet's default CSP, which blocks its inline bootstrap script.
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(helmet());
